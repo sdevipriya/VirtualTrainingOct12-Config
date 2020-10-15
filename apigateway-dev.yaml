@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: productms
+        uri: lb://productms
+        predicates:
+        - Path=/v5/products/**
+    filters:
+        - TokenRelay=			
